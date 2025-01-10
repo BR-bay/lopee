@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>love</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #ffe4e1, #ffc1cc);
+            color: #ff69b4;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-size: 3rem;
+            color: #ff1493;
+            margin-top: 20px;
+        }
+        p {
+            font-size: 1.5rem;
+            margin: 20px auto;
+            max-width: 90%;
+        }
+        .hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .heart {
+            width: 50px;
+            height: 50px;
+            background-color: #ff69b4;
+            position: absolute;
+            animation: float 5s ease-in-out infinite;
+            border-radius: 50%;
+            transform: rotate(45deg);
+        }
+        .heart::before, .heart::after {
+            content: '';
+            width: 50px;
+            height: 50px;
+            background-color: #ff69b4;
+            position: absolute;
+            border-radius: 50%;
+        }
+        .heart::before {
+            top: -25px;
+            left: 0;
+        }
+        .heart::after {
+            left: 25px;
+            top: 0;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(45deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(45deg);
+                opacity: 0;
+            }
+        }
+        iframe {
+            margin: 20px 0;
+            width: 90%;
+            max-width: 560px;
+            height: 315px;
+            border: none;
+            border-radius: 15px;
+        }
+        .contact {
+            margin: 20px;
+        }
+        .contact a {
+            text-decoration: none;
+            color: white;
+            background-color: #ff69b4;
+            padding: 15px 20px;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+        .contact a:hover {
+            background-color: #ff1493;
+            transform: scale(1.1);
+        }
+        .gallery {
+            margin: 30px 0;
+        }
+        .gallery img {
+            width: 100px;
+            height: 100px;
+            border-radius: 15px;
+            margin: 10px;
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.2);
+        }
+        .love-calculator {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #ffe4e1;
+            border-radius: 15px;
+            display: inline-block;
+        }
+        .love-calculator input {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 10px;
+            border: 1px solid #ff69b4;
+        }
+        .love-calculator button {
+            padding: 10px 20px;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .love-calculator button:hover {
+            background-color: #ff1493;
+        }
+        .result {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            color: #ff1493;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+    <script>
+        function calculateLove() {
+            const name1 = document.getElementById('name1').value.toLowerCase();
+            const name2 = document.getElementById('name2').value.toLowerCase();
+            let lovePercentage;
+
+            if (
+                (name1 === 'bayu' && name2 === 'yenda') ||
+                (name1 === 'bayu ramazandi' && name2 === 'apri jonita yenda') ||
+                (name2 === 'bayu' && name1 === 'yenda') ||
+                (name2 === 'bayu ramazandi' && name1 === 'apri jonita yenda')
+            ) {
+                lovePercentage = 100;
+            } else {
+                lovePercentage = Math.floor(Math.random() * 101);
+            }
+
+            if (name1 && name2) {
+                document.getElementById('result').textContent = `${name1} & ${name2} memiliki kecocokan cinta sebesar ${lovePercentage}%! ❤️`;
+            } else {
+                document.getElementById('result').textContent = 'Mohon isi kedua nama!';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="hearts">
+        <div class="heart" style="left: 10%; animation-duration: 4s;"></div>
+        <div class="heart" style="left: 30%; animation-duration: 6s;"></div>
+        <div class="heart" style="left: 50%; animation-duration: 8s;"></div>
+        <div class="heart" style="left: 70%; animation-duration: 5s;"></div>
+        <div class="heart" style="left: 90%; animation-duration: 7s;"></div>
+    </div>
+
+    <h1>❤️ Selamanya Cinta Bayu & Yenda ❤️</h1>
+
+    <h2>🌹💕 Apri Jonita Yenda yang cantikkk, imutttt, lucuuu, dan gemessss 💕🌹</h2>
+    <p>
+        Sayangku, Apri Jonita Yenda,
+        Setiap kali aku memandangmu, hatiku seperti mekar dengan bunga cinta yang tak pernah layu. Kamu adalah ciptaan Tuhan yang paling indah, bagaikan matahari yang menerangi setiap sudut hatiku dengan sinarmu yang hangat. ☀️🌸
+        
+        Tatapan matamu yang mempesona bagaikan bintang yang selalu bersinar di malam yang gelap.✨ Dan senyummu? Ah, sayangku, senyummu adalah pelangi setelah hujan, memberikan warna dalam hidupku yang dulunya hanya kelabu. 🌈💖
+        
+        Aku sering berpikir, bagaimana mungkin seseorang seimut kamu, selucu kamu, segemes kamu, bisa hadir dalam hidupku? Kamu itu bagaikan boneka kecil yang penuh cinta, yang setiap detiknya membuatku ingin selalu memelukmu erat dan tak pernah melepaskan. 🧸💞
+        
+        Apri Jonita Yenda, cintaku padamu begitu dalam seperti samudra yang tak berujung. Kamu adalah segalanya untukku. Aku mencintaimu bukan hanya karena kecantikanmu yang luar biasa, tapi karena hatimu yang lembut, senyummu yang tulus, dan caramu membuat aku merasa menjadi pria paling beruntung di dunia. 🌊❤️
+        
+        Kamu adalah alasanku bangun setiap pagi dengan senyuman, alasanku bermimpi di malam hari, dan alasanku ingin menjadi pria yang lebih baik setiap hari. 🌻💌
+        
+        Aku mencintaimu dengan sepenuh hatiku, sayangku. Terima kasih telah hadir dalam hidupku dan mengisinya dengan tawa, cinta, dan kebahagiaan. Aku akan selalu menjagamu, selalu mencintaimu, dan selalu ada untukmu. 💕💍
+        
+        "Apri Jonita Yenda, kamulah mimpi yang menjadi kenyataan. I love you more than words can say." 💖💖
+    </p>
+    <h2>✨💖 Dengan segenap cinta,
+        Bayu Ramazandi 💖✨</h2> 
+        
+        
+    <h2>🌹 Kekasihku, Apri Jonita Yenda 🌹</h2>
+    <p>
+        ayangku, Apri Jonita Yenda,
+        Ketika aku menatap wajahmu, aku melihat segalanya—masa kini yang membahagiakan, masa depan yang penuh harapan, dan mimpi-mimpi indah yang hanya ingin kujalani bersamamu. 🌹❤️
+        
+        Kamu itu seperti keajaiban yang datang dalam hidupku tanpa aku pernah memintanya, namun kehadiranmu mengubah segalanya menjadi lebih indah. Setiap helai rambutmu yang lembut seperti sutra, setiap kilauan mata indahmu, hingga tawamu yang melodius, semuanya membuatku semakin terpesona dan jatuh cinta. ✨💕
+        
+        Apri, kamu adalah definisi keindahan yang sesungguhnya. Kalau Tuhan menciptakanmu, aku yakin Dia melakukannya dengan sepenuh cinta, karena tak ada satu pun yang bisa menandingi keanggunanmu. Kamu cantik bukan hanya di luar, tapi juga di dalam. Hatimu yang penuh kasih sayang membuatku semakin yakin bahwa aku tidak hanya mencintaimu, tapi juga mengagumimu. 💖🌟
+        
+        Aku ingin kamu tahu, setiap detik bersamamu adalah momen yang tak tergantikan. Caramu berbicara, caramu tersenyum, bahkan caramu merajuk dengan lucu membuatku semakin merasa bahwa hidup ini begitu sempurna hanya karena ada kamu. 🥰💞
+        
+        Sayangku, aku tidak hanya ingin mencintaimu hari ini, esok, atau lusa. Aku ingin mencintaimu seumur hidupku, bahkan hingga akhir waktu. Kalau cinta bisa diibaratkan sebuah langit malam, maka kamu adalah seluruh bintang yang bersinar di dalamnya. Kamu membuat hidupku terang, penuh arti, dan tak pernah membosankan. 🌌🌠
+        
+        Ketika aku menggenggam tanganmu, aku merasa seolah dunia berhenti berputar. Aku tahu, dalam genggaman ini, ada kebahagiaan yang tak pernah bisa dicuri siapa pun. Aku ingin terus bersamamu, melindungimu, dan membuatmu bahagia sampai napas terakhirku. 🫶💍
+        
+        "Apri Jonita Yenda, kamu adalah jawaban dari setiap doa yang pernah kupanjatkan. Aku mencintaimu lebih dari yang bisa diungkapkan oleh kata-kata, dan aku akan selalu melakukannya, selamanya." 💕🌹
+    </p>
+    <h2>💌 Dengan cinta yang tak terbatas,
+        Bayu Ramazandi 🥰💖</h2>
+
+
+    <h2>🌹 cintaaaku, Apri Jonita Yenda 🌹</h2>
+    <p>
+        Sayangku, Apri Jonita Yenda,
+
+        Aku sering bertanya pada diriku sendiri, apa yang telah aku lakukan sehingga pantas mendapatkanmu, wanita seindah dan sesempurna kamu? Aku merasa seperti pria paling beruntung di dunia karena aku memiliki kamu di sisiku. Kamu adalah pelangi setelah badai, matahari setelah malam yang panjang, dan melodi indah di tengah heningnya kehidupanku. 🎶🌈☀️
+
+        Tatapan matamu, sayang, itu adalah tempat di mana aku merasa paling damai. Dalam mata itu, aku melihat cinta, kehangatan, dan harapan. Setiap kali kamu menatapku dengan mata indahmu itu, aku merasa dunia menjadi lebih tenang. Bahkan dalam kekacauan hidup, hanya melihatmu saja sudah cukup untuk menghapus semua rasa lelah. ✨💖
+
+        Kamu tahu, setiap kali aku mendengar tawamu, rasanya seperti musik yang menyentuh jiwa. Tawa kamu adalah kebahagiaan yang tidak bisa digantikan oleh apapun. Kalau aku bisa, aku ingin mengabadikan tawa itu dan mendengarnya setiap hari dalam hidupku. Suaramu adalah hal paling menenangkan yang pernah kudengar—lembut, manis, dan selalu membuatku rindu. 🥰💓
+
+        Sayang, kecantikanmu itu lebih dari sekadar yang terlihat oleh mata. Senyummu seperti lilin yang menerangi kegelapan, caramu berbicara selalu membuat hatiku bergetar, dan kebaikan hatimu adalah bukti bahwa malaikat benar-benar ada di bumi ini. Kamu tidak hanya membuatku jatuh cinta, tetapi juga membuatku ingin menjadi pria yang lebih baik, pria yang layak mendampingimu. 🌟❤️
+
+        Aku ingin kamu tahu, cintaku padamu tidak hanya besar—cintaku itu tanpa batas, melampaui kata-kata, melampaui waktu, bahkan melampaui ruang. Kalau aku bisa menuliskan semua alasan mengapa aku mencintaimu, mungkin aku akan kehabisan kertas, tinta, dan waktu. Tapi aku tahu, di setiap huruf, di setiap kata, dan di setiap kalimat, namamu selalu menjadi inti dari semuanya. 🖋️💌
+
+        Aku berjanji, sayang, tidak peduli apa yang terjadi, aku akan selalu ada untukmu. Dalam suka dan duka, dalam tawa dan tangis, aku akan menggenggam tanganmu erat dan tidak akan pernah melepaskan. Kamu adalah rumahku, tempat aku merasa nyaman, tempat aku ingin selalu kembali. 🏡💕
+
+        "Apri Jonita Yenda, aku mencintaimu lebih dari yang bisa dijelaskan oleh waktu, lebih dalam dari lautan, dan lebih tinggi dari langit. Bersamamu adalah impian yang menjadi kenyataan, dan aku akan menjaga mimpi ini selamanya." 💕🌹
+    </p>
+    <h2>💞 Dengan cinta yang lebih besar setiap harinya,
+        Bayu Ramazandi 🥰✨</h2>
+
+
+    <h2>🌹 my hearth ku, Apri Jonita Yenda 🌹</h2>
+    <p>
+        Sayangku, Apri Jonita Yenda,
+
+        Ketika aku memikirkanmu, hatiku penuh dengan rasa syukur. Aku bersyukur karena semesta telah mempertemukan kita. Kamu bukan hanya cinta dalam hidupku, tetapi juga inspirasiku, kekuatanku, dan alasan mengapa aku selalu ingin menjadi versi terbaik dari diriku sendiri. 🌟💖
+
+        Kamu tahu, setiap kali aku melihatmu, aku merasa seperti waktu berhenti. Semua hal di sekitarku menjadi tidak penting, karena di saat itu hanya ada kamu—kecantikanmu yang menakjubkan, senyummu yang manis, dan kehadiranmu yang begitu menenangkan. Kamu seperti sihir, sayang, karena hanya dengan kehadiranmu, segalanya menjadi lebih baik. ✨💕
+
+        Aku tidak pernah tahu bahwa cinta bisa seindah ini sampai aku bertemu denganmu. Kamu adalah definisi sejati dari kebahagiaan, dan aku tidak bisa membayangkan hidup tanpamu. Setiap detik bersamamu adalah momen yang aku hargai, dan setiap kenangan yang kita buat bersama adalah harta yang paling berharga dalam hidupku. 🥰🌹
+
+        Sayang, aku ingin kamu tahu bahwa aku mencintaimu lebih dari sekadar kata-kata. Cinta ini terlihat dalam caraku memandangmu, dalam pelukan hangatku, dan dalam setiap doa yang kupanjatkan untukmu setiap malam. Aku selalu berdoa agar kamu selalu bahagia, selalu sehat, dan selalu merasa dicintai, karena kamu layak mendapatkan semua itu. 🙏💞
+
+        Aku tidak hanya mencintai senyummu, tawamu, atau kecantikanmu yang tiada tanding. Aku mencintai semua tentangmu—bahkan hal-hal kecil yang mungkin tidak pernah kamu sadari. Aku mencintai caramu berbicara dengan semangat, caramu tertawa dengan tulus, bahkan caramu merajuk dengan lucu saat kamu ingin dimanja. Semuanya, sayang, semuanya tentangmu membuatku semakin jatuh cinta. 💓✨
+
+        Ketahuilah, kamu adalah pusat dari semua impian dan harapanku. Aku ingin berjalan bersama denganmu, melalui semua suka dan duka, merajut kisah yang indah hingga akhir waktu. Aku ingin menjadi pria yang selalu ada di sampingmu, yang selalu mendukungmu, dan yang selalu mencintaimu tanpa syarat. 💕🌈
+
+        "Apri Jonita Yenda, kamu adalah napasku, jantungku, dan seluruh hidupku. Aku mencintaimu tidak hanya untuk hari ini, tetapi untuk selamanya. Kamu adalah alasanku percaya bahwa cinta sejati itu nyata, dan aku bersyukur karena cinta sejati itu adalah kamu." ❤️🌹
+     </p>
+    <h2>💌 Selalu dengan cinta yang tak pernah berkurang,
+        Bayu Ramazandi 🥰💖</h2>
+
+
+    <h2>Sayangku, 🌹💖 Apri Jonita Yenda 💖🌹</h2>
+    <p>
+        Setiap detik yang kuhabiskan bersamamu adalah anugerah yang tak ternilai. Aku masih tidak percaya bahwa aku telah dipilih oleh semesta untuk menjadi bagian dari hidupmu. Kamu adalah keajaiban yang aku tidak pernah tahu aku butuhkan, namun kini aku tidak bisa hidup tanpamu. ✨💕
+
+        Ketika aku melihatmu, sayang, aku melihat dunia yang berbeda—dunia yang penuh warna, kebahagiaan, dan cinta. Matamu yang indah adalah cermin dari langit malam yang penuh bintang, berkilau dengan cahaya harapan dan kehangatan. Aku bisa tersesat dalam tatapanmu, dan aku tidak akan pernah ingin ditemukan. 🌌💫
+
+        Senyummu, ah, senyummu adalah segalanya, sayangku. 😊🌹 Itu adalah cahaya yang menyinari setiap sudut gelap dalam hidupku. Tidak peduli seberapa berat hari ini, cukup melihat senyummu, aku tahu semuanya akan baik-baik saja. Kamu seperti obat yang menyembuhkan semua luka di hatiku, pelangi setelah badai yang membawa kedamaian. 🌈❤️
+
+        Kamu tahu, sayang? Setiap kali kamu berbicara dengan suaramu yang lembut dan manis itu, rasanya seperti mendengarkan melodi cinta yang hanya dimainkan untukku. 🎶💕 Setiap kata yang keluar dari bibirmu adalah puisi yang menyentuh hatiku, membuatku merasa bahwa cinta sejati benar-benar ada, dan aku telah menemukannya dalam dirimu. 🥰✨
+
+        Aku mencintai setiap hal kecil tentangmu, mulai dari cara kamu tertawa hingga cara kamu merajuk dengan lucu. Kamu adalah perpaduan sempurna dari kecantikan, kepolosan, dan kehangatan yang membuatku tidak bisa berhenti jatuh cinta padamu setiap hari. 💖💖
+
+        Sayangku, cintaku padamu seperti langit yang tak berujung, seperti lautan yang tak pernah kering, dan seperti bintang yang selalu bersinar di malam hari. Aku mencintaimu dengan cara yang tidak bisa dijelaskan oleh kata-kata, tetapi bisa dirasakan dalam setiap detak jantungku. ❤️🌊✨
+
+        Aku ingin kamu tahu, aku bukan hanya mencintai kamu untuk hari ini atau esok. Aku mencintai kamu untuk setiap hari dalam hidupku, hingga akhir waktu. Aku ingin menjadi orang yang selalu ada di sampingmu, yang selalu mendukungmu, yang selalu mencintaimu dengan segenap hatiku. Aku ingin menjadi tempat kamu merasa aman, tempat kamu berbagi tawa, dan tempat kamu menangis tanpa rasa takut. 💕🫂
+
+        Kamu adalah rumahku, sayang. Tempat di mana aku merasa nyaman, tenang, dan bahagia. 🏡❤️ Setiap kali aku berada di dekatmu, aku merasa hidupku lengkap. Aku tahu aku tidak sempurna, tetapi aku akan selalu berusaha menjadi yang terbaik untukmu. Karena kamu, Apri Jonita Yenda, adalah segalanya bagiku. 🌹💖
+
+        "Apri Jonita Yenda, aku mencintaimu lebih dari yang bisa diungkapkan oleh kata-kata, lebih dalam dari lautan, dan lebih tinggi dari langit. Kamu adalah duniaku, cintaku, dan alasanku untuk terus bermimpi. Bersamamu, aku menemukan kebahagiaan sejati, dan aku ingin mencintaimu hingga akhir waktuku." 💕🌈
+    </p>
+    <h2>🌟 Dengan seluruh cinta yang ada dalam hatiku,
+        Bayu Ramazandi 💖✨</h2>
+
+
+    <iframe src="https://www.youtube.com/embed/7aGMAPabiLw" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+    <div class="gallery">
+        <h2>Galeri Cinta</h2>
+        <img src="2.jpg" alt="Foto 1">
+        <img src="4.jpg" alt="Foto 2">
+        <img src="5.jpg" alt="Foto 3">
+    </div>
+
+    <div class="love-calculator">
+        <h3>Kalkulator Cinta</h3>
+        <input type="text" id="name1" placeholder="Nama Pertama">
+        <input type="text" id="name2" placeholder="Nama Kedua">
+        <button onclick="calculateLove()">Hitung</button>
+        <div id="result" class="result"></div>
+    </div>
+
+    <div class="contact">
+        <a href="https://wa.me/62085212637719?text=Hai,%20Aku%20suka%20halaman%20cinta%20ini!%20💖">Kirim Pesan Cinta ke WhatsApp</a>
+    </div>
+</body>
+</html>
